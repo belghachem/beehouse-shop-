@@ -30,7 +30,7 @@ ALLOWED_HOSTS = ['*']
 DATABASES = {
     'default': dj_database_url.config(
         # Your local PostgreSQL connection
-        default='postgresql://postgres:2000@dpg-d166cojuibrs73bd0130-a/beehouse_db',
+        default='postgresql://postgres:2000@localhost/beehouse_db',
         conn_max_age=600
     )
 }
@@ -127,6 +127,7 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 # MEDIA files (userh uploads)
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
 
 
 
