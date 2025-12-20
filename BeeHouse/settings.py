@@ -17,7 +17,7 @@ LOGIN_URL = 'users:login'
 LOGIN_REDIRECT_URL = 'home:home_page'
 LOGOUT_REDIRECT_URL = 'home:home_page'
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ["beehouse-shop.onrender.com"]
 #DATABASES = {
 #    'default': {
 #        'ENGINE': 'django.db.backends.postgresql',
@@ -30,7 +30,7 @@ ALLOWED_HOSTS = ['*']
 DATABASES = {
     'default': dj_database_url.config(
         # Your local PostgreSQL connection
-        default='postgresql://postgres:2000@dpg-d53gsvali9vc73ag7ujg-a.oregon-postgres.render.com:5432/beehouse_db',
+        default='postgresql://postgres:2000@dpg-d53gsvali9vc73ag7ujg-a/beehouse_db',
         conn_max_age=600
     )
 }
@@ -127,6 +127,7 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 # MEDIA files (userh uploads)
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
 
 
 
