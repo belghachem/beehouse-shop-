@@ -120,8 +120,9 @@ USE_TZ = True
 
 # STATIC files (My files)
 STATIC_URL = '/static/'
-STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
+# Whitenoise configuration for static files
 # MEDIA files (userh uploads)
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
