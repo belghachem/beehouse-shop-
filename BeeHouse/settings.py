@@ -35,7 +35,7 @@ ALLOWED_HOSTS = ["beehouse-shop.onrender.com"]
 DATABASES = {
     'default': dj_database_url.config(
         # Your local PostgreSQL connection
-        default='postgresql://postgres:2000@dpg-d53gsvali9vc73ag7ujg-a/beehouse_db',
+        default='postgresql://postgres:2000@0.0.0.0:8000/beehouse_db',
         conn_max_age=600
     )
 }
@@ -132,6 +132,7 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 # MEDIA files (userh uploads)
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
 
 
 
