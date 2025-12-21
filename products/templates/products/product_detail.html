@@ -466,7 +466,7 @@
             <div class="product-image-section">
                 <div class="product-badge">🐝 Natural Product</div>
                 {% if product.image %}
-                    <img src="{{ product.image.url }}" alt="{{ product.name }}" class="product-image">
+                    <img src="{% static 'Images/jarofhoney.jpg' %}" alt="{{ product.name }}" class="product-image">
                 {% else %}
                     <img src="" alt="{{ product.name }}" class="product-image">
                 {% endif %}
