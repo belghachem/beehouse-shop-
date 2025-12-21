@@ -10,7 +10,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 SECRET_KEY = 'django-insecure-na65ig+r$--9zcl6a$4zjwgvuuj07)^n$6s#i63skjpc*xknj+'
 
-DEBUG = False
+DEBUG = True
 
 
 LOGIN_URL = 'users:login'
@@ -133,3 +133,4 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 MEDIA_URL = '/media/'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
