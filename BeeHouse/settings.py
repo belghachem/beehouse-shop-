@@ -2,7 +2,7 @@ from pathlib import Path
 import os
 import dj_database_url 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
-BASE_DIR = Path(__file__).resolve().parent.parent.parent
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
 # Quick-start development settings - unsuitable for production
@@ -10,14 +10,14 @@ BASE_DIR = Path(__file__).resolve().parent.parent.parent
 
 SECRET_KEY = 'django-insecure-na65ig+r$--9zcl6a$4zjwgvuuj07)^n$6s#i63skjpc*xknj+'
 
-DEBUG = 'False'
-DEBUG = False
+DEBUG = "False"
+
 
 LOGIN_URL = 'users:login'
 LOGIN_REDIRECT_URL = 'home:home_page'
 LOGOUT_REDIRECT_URL = 'home:home_page'
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = []
 #DATABASES = {
 #    'default': {
 #        'ENGINE': 'django.db.backends.postgresql',
@@ -30,7 +30,7 @@ ALLOWED_HOSTS = ['*']
 DATABASES = {
     'default': dj_database_url.config(
         # Your local PostgreSQL connection
-        default='postgresql://beehouse_db_user:fUmvILi8pW5qMyIEk66t6aHpp41oZzHo@dpg-d53ocqm3jp1c738pc4qg-a/beehouse_db',
+        default='postgresql://postgres:2000@localhost:5432/beehouse_db',
         conn_max_age=600
     )
 }
@@ -120,21 +120,15 @@ USE_TZ = True
 
 # STATIC files (My files)
 STATIC_URL = '/static/'
-# Tell Django to copy static assets into a path called `staticfiles` (this is specific to Render)
+
+# Add these lines:
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static'),  # Points to your static folder
+]
+
+# For production/collectstatic
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
-# Whitenoise configuration for static files
+
 # MEDIA files (userh uploads)
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-
-
-
-
-
-
-
-
-
-
-
