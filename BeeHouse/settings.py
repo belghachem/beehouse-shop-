@@ -10,14 +10,14 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 SECRET_KEY = 'django-insecure-na65ig+r$--9zcl6a$4zjwgvuuj07)^n$6s#i63skjpc*xknj+'
 
-DEBUG = "False"
+DEBUG = False
 
 
 LOGIN_URL = 'users:login'
 LOGIN_REDIRECT_URL = 'home:home_page'
 LOGOUT_REDIRECT_URL = 'home:home_page'
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 #DATABASES = {
 #    'default': {
 #        'ENGINE': 'django.db.backends.postgresql',
@@ -30,7 +30,7 @@ ALLOWED_HOSTS = []
 DATABASES = {
     'default': dj_database_url.config(
         # Your local PostgreSQL connection
-        default='postgresql://postgres:2000@localhost:5432/beehouse_db',
+        default='postgresql://beehouse_db_user:fUmvILi8pW5qMyIEk66t6aHpp41oZzHo@dpg-d53ocqm3jp1c738pc4qg-a/beehouse_db',
         conn_max_age=600
     )
 }
@@ -131,4 +131,5 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 # MEDIA files (userh uploads)
 MEDIA_URL = '/media/'
+
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
